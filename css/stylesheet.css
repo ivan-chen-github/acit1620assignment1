@@ -35,47 +35,65 @@ section{
 }
 .top_buttons{
     display: flex;
-    color: white;
-    margin: auto;
-    width: 98%;
     height: min-content;
-    margin-bottom: 1%;
+    margin: 2%
 }
 #new {
     background-color: rgb(95, 152, 125);
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 20px;
+    color: white;
+    font-size: 20px;
+    border: none
 }
 #dark{
     background: rgb(105, 105, 105);
-    border-radius: 10px;
+    border-radius: 15px;
     margin-left: auto;
-    padding: 20px; 
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    border: none
 }
-#text{
+.notes{
     background-color: white;
-    border-radius: 10px;
+    border-radius: 15px;
     width: 85%;
     flex: 1 1 0;
     margin: auto;
 }
+#text{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border: none;
+    resize: none;
+    font-size: 20px;
+    border-radius: 15px;
+    padding: 20px;
+}
 .bottom_buttons{
     display: flex;
-    color: white;
     justify-content: center;
-    margin: 1%;
+    margin: 2%;
 }
 #save {
     background-color: rgb(95, 152, 125);
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 20px;
     margin-right: 5px;
+    color: white;
+    font-size: 20px;
+    border: none
 }
 #cancel {
     background-color: rgb(210, 60, 34);
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 20px;
     margin-left: 5px;
+    color: white;
+    font-size: 20px;
+    border: none
 }
 footer{
     background-color: rgb(223, 188, 184);

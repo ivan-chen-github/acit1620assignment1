@@ -18,23 +18,23 @@
             <main>
                 <section>
                     <div class="top_buttons">
-                        <p id="new">New Note</p>
-                        <p id="dark">Dark Theme</p>
+                        <button type="button" onclick="alert('Should create new note')" id="new">New Note</button>
+                        <button type="button" onclick="alert('Should change to dark mode')" id="dark">Dark Theme</button>
                     </div>
-                    <div id="text">
-                        <p>This is a placeholder</p>
+                    <div class="notes">
+                        <textarea name="message" id="text">This is a placeholder</textarea> 
                     </div>
                     <div class="bottom_buttons">
-                        <p id="save">Save</p>
-                        <p id="cancel">Cancel</p>
+                        <button type="button" onclick="alert('Should save')" id="save">Save</button>
+                        <button type="button" onclick="alert('Should cancel')" id="cancel">Cancel</button>
                     </div>
                 </section>
             </main>
             <footer>
                 <h2>Keep in Touch</h2>
                 <p class="icons">
-                    <img src="pictures/linkedin_circle.webp" width="50px">
-                    <img src="pictures/Internet_Line.webp" width="50px">
+                    <a href="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_color-512.png"><img src="pictures/linkedin_circle.webp" width="50px"></a>
+                    <a href="https://cdn0.iconfinder.com/data/icons/internet-line/512/Internet_Line-02-512.png"><img src="pictures/Internet_Line.webp" width="50px"></a>
                 </p>
             </footer>
         </div>
