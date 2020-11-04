@@ -1,0 +1,92 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    font-family: sans-serif
+}
+.container{
+    height: 100%;
+    display:grid;
+    grid-template-columns: 15% auto;
+    grid-template-rows: min-content auto min-content;
+}
+header{
+    background-color: rgb(151, 126, 127);
+    grid-row: 1;
+    grid-column: 1/6;
+    margin-bottom: 10px;
+    text-align: center;
+}
+nav{
+    background-color: rgb(192, 192, 192);
+    grid-column: 1;
+    grid-row: 2;
+    margin-right: 10px;
+}
+main{
+    background-color: rgb(236, 232, 232);
+    grid-column: 2/6;
+    grid-row: 2;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+}
+.top_buttons{
+    display: flex;
+    color: white;
+    margin: auto;
+    width: 98%;
+    height: min-content;
+    margin-bottom: 1%;
+}
+#new {
+    background-color: rgb(95, 152, 125);
+    border-radius: 10px;
+    padding: 20px;
+}
+#dark{
+    background: rgb(105, 105, 105);
+    border-radius: 10px;
+    margin-left: auto;
+    padding: 20px; 
+}
+#text{
+    background-color: white;
+    border-radius: 10px;
+    width: 85%;
+    flex: 1 1 0;
+    margin: auto;
+}
+.bottom_buttons{
+    display: flex;
+    color: white;
+    justify-content: center;
+    margin: 1%;
+}
+#save {
+    background-color: rgb(95, 152, 125);
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 5px;
+}
+#cancel {
+    background-color: rgb(210, 60, 34);
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 5px;
+}
+footer{
+    background-color: rgb(223, 188, 184);
+    grid-row:3;
+    grid-column: 1/6;
+    margin-top: 10px;
+}
+footer > h2{
+    text-align: center;
+}
+.icons{
+    display: flex;
+    justify-content:center;
+}
