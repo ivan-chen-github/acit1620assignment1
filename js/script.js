@@ -5,7 +5,7 @@ const notesArray =
     {title:"note two", body:"some text 2"}
 ];
 
-function darkMode(){
+function darkMode() {
     let body = document.querySelector("body");
     let newNote = document.querySelector("#new");
     let save = document.querySelector("#save");
@@ -44,7 +44,7 @@ function darkMode(){
     }
 }
 
-function cancel(){
+function cancel() {
     let notes = document.querySelector(".notes");
     let bottomButtons = document.querySelector(".bottom_buttons");
     if (bottomButtons.style.display == "flex" || bottomButtons.style.display == ""){
@@ -53,7 +53,7 @@ function cancel(){
     }
 }
 
-function newNote(){
+function newNote() {
     let notes = document.querySelector(".notes");
     let bottomButtons = document.querySelector(".bottom_buttons");
     let textBox = document.querySelector("#text");
@@ -66,7 +66,7 @@ function newNote(){
     }
 }
 
-function createNotesArray(){
+function createNotesArray() {
     const notesArray = 
     [
         {title:"note one", body:"some text 1"},
@@ -76,7 +76,7 @@ function createNotesArray(){
     console.log(notesArray[1]);
 }
 
-function save(){
+function save() {
     let newestList = document.querySelector("nav > ul > li:last-child")
     let textBox = document.querySelector("#text");
     var title = textBox.value.split("\n")[0];
@@ -85,7 +85,14 @@ function save(){
     let newListItem = document.createElement("li")
     newListItem.innerHTML = title
     newListItem.id = "note"+notesArray.length
+    newListItem.addEventListener('click', function(){update(this); }, false)
     newestList.after(newListItem)
-    console.log(notesArray)
-    
+}
+
+function update(saved) {
+    let textBox = document.querySelector("#text");
+    let index = saved.id
+    index = index.replace("note", "") - 1
+    textBoxObj = notesArray[index];
+    textBox.value = textBoxObj.body
 }
