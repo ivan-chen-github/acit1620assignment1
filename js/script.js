@@ -1,4 +1,10 @@
 
+const notesArray = 
+[
+    {title:"note one", body:"some text 1"},
+    {title:"note two", body:"some text 2"}
+];
+
 function darkMode(){
     let body = document.querySelector("body");
     let newNote = document.querySelector("#new");
@@ -41,10 +47,9 @@ function darkMode(){
 function cancel(){
     let notes = document.querySelector(".notes");
     let bottomButtons = document.querySelector(".bottom_buttons");
-    console.log(bottomButtons.style.display)
     if (bottomButtons.style.display == "flex" || bottomButtons.style.display == ""){
-        bottomButtons.style.display = "none"
-        notes.style.display = "none"
+        bottomButtons.style.display = "none";
+        notes.style.display = "none";
     }
 }
 
@@ -53,10 +58,34 @@ function newNote(){
     let bottomButtons = document.querySelector(".bottom_buttons");
     let textBox = document.querySelector("#text");
     if (bottomButtons.style.display == "none"){
-        bottomButtons.style.display = "flex"
-        notes.style.display = "flex"
+        bottomButtons.style.display = "flex";
+        notes.style.display = "flex";
     }
     else{
-        textBox.value = ""
+        textBox.value = "";
     }
+}
+
+function createNotesArray(){
+    const notesArray = 
+    [
+        {title:"note one", body:"some text 1"},
+        {title:"note two", body:"some text 2"}
+    ];
+    console.log(notesArray);
+    console.log(notesArray[1]);
+}
+
+function save(){
+    let newestList = document.querySelector("nav > ul > li:last-child")
+    let textBox = document.querySelector("#text");
+    var title = textBox.value.split("\n")[0];
+    let newObj = {title: title, body: textBox.value};
+    notesArray.push(newObj);
+    let newListItem = document.createElement("li")
+    newListItem.innerHTML = title
+    newListItem.id = "note"+notesArray.length
+    newestList.after(newListItem)
+    console.log(notesArray)
+    
 }
