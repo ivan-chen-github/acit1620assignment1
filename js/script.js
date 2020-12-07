@@ -1,9 +1,12 @@
+// Javascript for index.html
+
 
 const notesArray = 
 [
     {title:"note one", body:"some text 1"},
     {title:"note two", body:"some text 2"}
 ];
+
 
 function darkMode() {
     let body = document.querySelector("body");
@@ -16,7 +19,7 @@ function darkMode() {
     let cancel = document.querySelector("#cancel");
     let dark = document.querySelector("#dark");
     let footer = document.querySelector("footer");
-    if (!(newNote.style.backgroundColor == "darkolivegreen")){
+    if (!(newNote.style.backgroundColor == "darkolivegreen")) {
         body.style.backgroundColor = "black";
         newNote.style.backgroundColor = "darkolivegreen";
         save.style.backgroundColor = "darkolivegreen";
@@ -44,14 +47,16 @@ function darkMode() {
     }
 }
 
+
 function cancel() {
     let notes = document.querySelector(".notes");
     let bottomButtons = document.querySelector(".bottom_buttons");
-    if (bottomButtons.style.display == "flex" || bottomButtons.style.display == ""){
+    if (bottomButtons.style.display == "flex" || bottomButtons.style.display == "") {
         bottomButtons.style.display = "none";
         notes.style.display = "none";
     }
 }
+
 
 function newNote() {
     let notes = document.querySelector(".notes");
@@ -66,33 +71,35 @@ function newNote() {
     }
 }
 
-function createNotesArray() {
-    const notesArray = 
-    [
-        {title:"note one", body:"some text 1"},
-        {title:"note two", body:"some text 2"}
-    ];
-    console.log(notesArray);
-    console.log(notesArray[1]);
-}
 
 function save() {
-    let newestList = document.querySelector("nav > ul > li:last-child")
+    let newestList = document.querySelector("nav > ul > li:last-child");
     let textBox = document.querySelector("#text");
     var title = textBox.value.split("\n")[0];
     let newObj = {title: title, body: textBox.value};
     notesArray.push(newObj);
-    let newListItem = document.createElement("li")
-    newListItem.innerHTML = title
-    newListItem.id = "note"+notesArray.length
-    newListItem.addEventListener('click', function(){update(this); }, false)
-    newestList.after(newListItem)
+    let newListItem = document.createElement("li");
+    newListItem.innerHTML = title;
+    newListItem.id = "note"+notesArray.length;
+    newListItem.addEventListener('click', function(){update(this); }, false);
+    newestList.after(newListItem);
 }
+
 
 function update(saved) {
     let textBox = document.querySelector("#text");
-    let index = saved.id
-    index = index.replace("note", "") - 1
-    textBoxObj = notesArray[index];
-    textBox.value = textBoxObj.body
+    let index = saved.id;
+    index = index.replace("note", "") - 1;
+    textBoxObj = notesArray[index];;
+    textBox.value = textBoxObj.body;
 }
+
+
+function init(){
+    let note1 = document.querySelector("#note1");
+    let note2 = document.querySelector("#note2");
+    note1.addEventListener('click', function(){update(this); }, false);
+    note2.addEventListener('click', function(){update(this); }, false);
+}
+
+init()
